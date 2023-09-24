@@ -4,10 +4,17 @@
 Flutterの桜の花びらに関する3Dエフェクトです。
 このパッケージは[simple_3d_renderer](https://pub.dev/packages/simple_3d_renderer)とその関連パッケージを用いて作成されており、simple_3d_rendererの簡単な使用例でもあります。
 デフォルトでは桜の花びらとキューブのアニメーションが付属していますが、ElementsFlowViewを利用することで、
-あらゆるSp3dObjを落下アニメーションさせることができます。
+あらゆる[Sp3dObj](https://pub.dev/packages/simple_3d)を落下アニメーションさせることができます。
+
+![桜の花びらのサンプル](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_sakura_sample.png)
+
+![キューブのサンプル](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_cube_sample.png)
 
 ## 使い方
 サンプルコードタブをチェックしてください。
+サンプルコードを実行した時に表示される画面は、以下のサンプルアプリからも確認することができます。  
+サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。  
+[サンプルアプリ](https://sakurablizzard.web.app/)
 
 ## サポート
 もし何らかの理由で有償のサポートが必要な場合は私の会社に問い合わせてください。  
