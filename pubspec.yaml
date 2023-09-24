@@ -1,0 +1,22 @@
+name: sakura_blizzard
+description: This is a 3D effect related to flower petals in Flutter. Cherry blossom petals are included as standard.
+version: 0.0.1
+repository: https://github.com/MasahideMori-SimpleAppli/sakura_blizzard
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  simple_3d: ^12.0.0
+  simple_3d_renderer: ^17.0.0
+  util_simple_3d: ^9.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
