@@ -15,8 +15,8 @@ but by using ElementsFlowView, you can make any [Sp3dObj](https://pub.dev/packag
 ![Cube](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_cube_sample.png)
 
 ## Usage
-Please check out the sample code tab.
-You can also check the screen displayed when you run the sample code from the sample app below.  
+Please check out the Examples tab.
+You can also check the screen similar to the screen that appears when you run the sample code from the sample app below.
 The sample app uses both a front layer and a back layer, with a child widget, the TextWidget, in between.  
 [Web Sample](https://sakurablizzard.web.app/)
 

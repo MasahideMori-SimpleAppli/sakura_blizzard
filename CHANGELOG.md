@@ -1,3 +1,7 @@
+## 2.0.1
+
+* README.md has been updated.
+
 ## 2.0.0
 
 * HirahiraDropPhysics has been improved to be easier to use even when the target is a smartphone.

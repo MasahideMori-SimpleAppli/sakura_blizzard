@@ -11,8 +11,8 @@ Flutterの桜の花びらに関する3Dエフェクトです。
 ![キューブのサンプル](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_cube_sample.png)
 
 ## 使い方
-サンプルコードタブをチェックしてください。
-サンプルコードを実行した時に表示される画面は、以下のサンプルアプリからも確認することができます。  
+Exampleタブをチェックしてください。
+サンプルコードを実行した時に表示される画面と類似の画面を、以下のサンプルアプリからも確認することができます。
 サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。  
 [サンプルアプリ](https://sakurablizzard.web.app/)
 
