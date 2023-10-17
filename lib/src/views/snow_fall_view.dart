@@ -6,13 +6,13 @@ import 'package:util_simple_3d/util_simple_3d.dart';
 import '../../sakura_blizzard.dart';
 
 ///
-/// (en) A view widget of colorful cubes rotating and falling.
+/// (en) This is a view of falling pieces of snow.
 ///
-/// (ja) カラフルなキューブが回転しながら落下するビューです。
+/// (ja) 雪のかけらが落下するビューです。
 ///
 /// Author Masahide Mori
 ///
-class ColorfulCubeView extends StatefulWidget {
+class SnowFallView extends StatefulWidget {
   final Widget child;
   final Size viewSize;
   final bool isRandomPositionY;
@@ -44,22 +44,22 @@ class ColorfulCubeView extends StatefulWidget {
   /// and 1 means the brightness will not change.
   /// * [customPhysicsCreation] : You can create your own behavior and use it.
   /// If this is not null, the dropType parameter is ignored.
-  const ColorfulCubeView(
+  const SnowFallView(
       {required this.child,
       required this.viewSize,
       this.isRandomPositionY = true,
       this.frontObjNum = 20,
       this.backObjNum = 20,
-      this.frontObjSize = const VRange(min: 8, max: 32),
-      this.backObjSize = const VRange(min: 8, max: 32),
-      this.dropType = EnumDropType.spinDrop3D,
+      this.frontObjSize = const VRange(min: 4, max: 16),
+      this.backObjSize = const VRange(min: 4, max: 16),
+      this.dropType = EnumDropType.basicDrop,
       this.fps = 60,
       this.minBrightness = 0.0,
       this.customPhysicsCreation,
       super.key});
 
   @override
-  State<ColorfulCubeView> createState() => _ColorfulCubeViewState();
+  State<SnowFallView> createState() => _SnowFallViewState();
 
   /// Convert enum to physics object.
   Sp3dPhysics _getDropPhysics(int fps) {
@@ -78,26 +78,11 @@ class ColorfulCubeView extends StatefulWidget {
     }
   }
 
-  /// Return random color material.
-  Sp3dMaterial _getRandomColorMaterial() {
-    double src = Random().nextDouble();
-    if (src < 0.25) {
-      return FSp3dMaterial.red;
-    } else if (src >= 0.25 && src < 0.5) {
-      return FSp3dMaterial.green;
-    } else if (src >= 0.5 && src < 0.75) {
-      return FSp3dMaterial.blue;
-    } else {
-      return SakuraBlizzardMaterials.yellow;
-    }
-  }
-
   /// Creates an object with the specified size range.
   /// * [targetSize] : The size range of generation object.
   Sp3dObj createObj(VRange targetSize) {
     final double objSize = targetSize.getRandomInRange();
-    final Sp3dObj r = UtilSp3dGeometry.cube(objSize, objSize, objSize, 1, 1, 1,
-        material: _getRandomColorMaterial());
+    final Sp3dObj r = UtilSnowCreator.snow(objSize);
     r.physics = _getDropPhysics(fps);
     if (r.physics!.rotateAxis != null) {
       r.rotate(r.physics!.rotateAxis!, Random().nextDouble() * 360 * pi / 180);
@@ -112,7 +97,7 @@ class ColorfulCubeView extends StatefulWidget {
   }
 }
 
-class _ColorfulCubeViewState extends State<ColorfulCubeView> {
+class _SnowFallViewState extends State<SnowFallView> {
   final List<Sp3dObj> _frontObjs = [];
   final List<Sp3dObj> _backObjs = [];
 

@@ -7,4 +7,4 @@
 ///
 /// Author Masahide Mori
 ///
-enum EnumDropType { rotatingDrop, spinDrop3D, hirahiraDrop }
+enum EnumDropType { rotatingDrop, spinDrop3D, hirahiraDrop, basicDrop }

@@ -1,3 +1,11 @@
+## 2.1.0
+
+* Bug fixes associated with base library updates.
+* Added ImageFallView, which allows you to easily drop image files.
+* Added SnowFallView, which makes simple snow fall.
+* Added BasicDropPhysics to simply drop objects.
+* Unique Sp3dPhysics now available in multiple views.
+
 ## 2.0.1
 
 * README.md has been updated.

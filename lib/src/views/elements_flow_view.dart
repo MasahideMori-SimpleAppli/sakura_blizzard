@@ -135,36 +135,77 @@ class _ElementsFlowViewState extends State<ElementsFlowView> {
     });
   }
 
+  /// 必要な分だけスタックの内容を返します。
+  List<Widget> _getStackChildren() {
+    if (widget.backLayerElements.isEmpty &&
+        widget.frontLayerElements.isNotEmpty) {
+      return [
+        widget.child,
+        Sp3dRenderer(
+          widget.viewSize,
+          Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
+          _frontWorld!,
+          _camera,
+          _light,
+          allowUserWorldRotation: false,
+          allowUserWorldZoom: false,
+          checkTouchObj: false,
+          useUserGesture: false,
+          vn: _vn,
+        ),
+      ];
+    } else if (widget.backLayerElements.isNotEmpty &&
+        widget.frontLayerElements.isEmpty) {
+      return [
+        Sp3dRenderer(
+          widget.viewSize,
+          Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
+          _backWorld!,
+          _camera,
+          _light,
+          allowUserWorldRotation: false,
+          allowUserWorldZoom: false,
+          checkTouchObj: false,
+          useUserGesture: false,
+          vn: _vn,
+        ),
+        widget.child,
+      ];
+    } else {
+      return [
+        Sp3dRenderer(
+          widget.viewSize,
+          Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
+          _backWorld!,
+          _camera,
+          _light,
+          allowUserWorldRotation: false,
+          allowUserWorldZoom: false,
+          checkTouchObj: false,
+          useUserGesture: false,
+          vn: _vn,
+        ),
+        widget.child,
+        Sp3dRenderer(
+          widget.viewSize,
+          Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
+          _frontWorld!,
+          _camera,
+          _light,
+          allowUserWorldRotation: false,
+          allowUserWorldZoom: false,
+          checkTouchObj: false,
+          useUserGesture: false,
+          vn: _vn,
+        ),
+      ];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_backWorldLoaded && _frontWorldLoaded) {
-      return Stack(
-        children: [
-          Sp3dRenderer(
-            widget.viewSize,
-            Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
-            _backWorld!,
-            _camera,
-            _light,
-            allowUserWorldRotation: false,
-            allowUserWorldZoom: false,
-            checkTouchObj: false,
-            vn: _vn,
-          ),
-          widget.child,
-          Sp3dRenderer(
-            widget.viewSize,
-            Sp3dV2D(widget.viewSize.width / 2, widget.viewSize.height / 2),
-            _frontWorld!,
-            _camera,
-            _light,
-            allowUserWorldRotation: false,
-            allowUserWorldZoom: false,
-            checkTouchObj: false,
-            vn: _vn,
-          ),
-        ],
-      );
+      return Stack(children: _getStackChildren());
     } else {
       return const Center(child: CircularProgressIndicator());
     }
