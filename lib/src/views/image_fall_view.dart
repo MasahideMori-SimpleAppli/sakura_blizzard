@@ -92,10 +92,9 @@ class ImageFallView extends StatefulWidget {
   /// * [targetSize] : The size range of generation object.
   Sp3dObj createObj(VRange targetSize) {
     final double objSize = targetSize.getRandomInRange();
-    final Sp3dObj r = UtilImageTileCreator.imageTile(objSize);
     final int targetImageIndex = Random().nextInt(images.length);
-    r.images.add(images[targetImageIndex]);
-    r.images.add(backImages[targetImageIndex]);
+    final Sp3dObj r = UtilImageTileCreator.imageTile(
+        objSize, images[targetImageIndex], backImages[targetImageIndex]);
     r.physics = _getDropPhysics(fps);
     if (r.physics!.rotateAxis != null) {
       r.rotate(r.physics!.rotateAxis!, Random().nextDouble() * 360 * pi / 180);

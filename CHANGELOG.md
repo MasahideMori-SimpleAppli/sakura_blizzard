@@ -1,3 +1,8 @@
+## 3.0.0
+
+* Fixed due to bug fixes in base library. What is affected is ImageFallView.
+* The processing of UtilImageTileCreator has been made lighter.
+
 ## 2.1.0
 
 * Bug fixes associated with base library updates.
