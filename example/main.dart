@@ -36,13 +36,13 @@ class _MyAppState extends State<MyApp> {
   /// Here, load the image you want to use in ImageFallView.
   void _loadImage() async {
     final Uint8List img1 =
-    await _readFileBytes("./assets/images/your_image1.png");
+        await _readFileBytes("./assets/images/your_image1.png");
     final Uint8List img2 =
-    await _readFileBytes("./assets/images/your_image2.png");
+        await _readFileBytes("./assets/images/your_image2.png");
     final Uint8List img1r =
-    await _readFileBytes("./assets/images/your_image1_r.png");
+        await _readFileBytes("./assets/images/your_image1_r.png");
     final Uint8List img2r =
-    await _readFileBytes("./assets/images/your_image2_r.png");
+        await _readFileBytes("./assets/images/your_image2_r.png");
     setState(() {
       _images = [img1, img2];
       _imagesR = [img1r, img2r];
@@ -56,9 +56,9 @@ class _MyAppState extends State<MyApp> {
           fps: 60,
           child: const Center(
               child: Text(
-                "Sakura",
-                style: TextStyle(fontSize: 72),
-              )));
+            "Sakura",
+            style: TextStyle(fontSize: 72),
+          )));
     } else if (_selectedIndex == 1) {
       return SnowFallView(
           viewSize: Size(w, h),
@@ -69,9 +69,9 @@ class _MyAppState extends State<MyApp> {
                     color: Colors.blue[300],
                     child: const Center(
                         child: Text(
-                          "Snow",
-                          style: TextStyle(fontSize: 72),
-                        ))))
+                      "Snow",
+                      style: TextStyle(fontSize: 72),
+                    ))))
           ]));
     } else if (_selectedIndex == 2) {
       return ImageFallView(
@@ -83,18 +83,18 @@ class _MyAppState extends State<MyApp> {
           backObjSize: const VRange(min: 12, max: 48),
           child: const Center(
               child: Text(
-                "Image",
-                style: TextStyle(fontSize: 72),
-              )));
+            "Image",
+            style: TextStyle(fontSize: 72),
+          )));
     } else {
       return ColorfulCubeView(
           viewSize: Size(w, h),
           fps: 60,
           child: const Center(
               child: Text(
-                "Cube",
-                style: TextStyle(fontSize: 72),
-              )));
+            "Cube",
+            style: TextStyle(fontSize: 72),
+          )));
     }
   }
 
