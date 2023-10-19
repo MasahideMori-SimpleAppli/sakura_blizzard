@@ -1,3 +1,7 @@
+## 3.0.1
+
+* Updated example.
+
 ## 3.0.0
 
 * Fixed due to bug fixes in base library. What is affected is ImageFallView.
