@@ -1,9 +1,15 @@
 # sakura_blizzard
 
+## デモ
+サンプルコードを実行した時に表示される画面と類似の画面を、以下のサンプルアプリからも確認することができます。
+サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。
+[サンプルアプリ](https://sakurablizzard.web.app/)
+
 ## 概要
 Flutterの桜の花びらに関する3Dエフェクトです。
+桜以外にも、雪、雨、画像などを落下させられます。
 このパッケージは[simple_3d_renderer](https://pub.dev/packages/simple_3d_renderer)とその関連パッケージを用いて作成されており、simple_3d_rendererの簡単な使用例でもあります。
-デフォルトでは桜の花びらとキューブのアニメーションが付属していますが、ElementsFlowViewを利用することで、
+デフォルト以外のオブジェクトを使用したい場合、ElementsFlowViewを利用することで、
 あらゆる[Sp3dObj](https://pub.dev/packages/simple_3d)を落下アニメーションさせることができます。
 
 ![桜の花びらのサンプル](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_sakura_sample.png)
@@ -12,9 +18,6 @@ Flutterの桜の花びらに関する3Dエフェクトです。
 
 ## 使い方
 Exampleタブをチェックしてください。
-サンプルコードを実行した時に表示される画面と類似の画面を、以下のサンプルアプリからも確認することができます。
-サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。  
-[サンプルアプリ](https://sakurablizzard.web.app/)
 
 ## サポート
 もし何らかの理由で有償のサポートが必要な場合は私の会社に問い合わせてください。  

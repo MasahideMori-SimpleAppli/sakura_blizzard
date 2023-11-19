@@ -75,6 +75,8 @@ class SnowFallView extends StatefulWidget {
         return HirahiraDropPhysics(viewSize, fps: fps);
       case EnumDropType.basicDrop:
         return BasicDropPhysics();
+      case EnumDropType.rainDrop:
+        return RainDropPhysics();
     }
   }
 

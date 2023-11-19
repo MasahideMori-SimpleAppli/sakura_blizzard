@@ -16,8 +16,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
+
   // Surface image
   List<Uint8List>? _images;
+
   // Image on the back.
   // Set a horizontally flipped image or set a dedicated back image.
   List<Uint8List>? _imagesR;
@@ -87,14 +89,19 @@ class _MyAppState extends State<MyApp> {
             style: TextStyle(fontSize: 72),
           )));
     } else {
-      return ColorfulCubeView(
+      return RainFallView(
           viewSize: Size(w, h),
           fps: 60,
-          child: const Center(
-              child: Text(
-            "Cube",
-            style: TextStyle(fontSize: 72),
-          )));
+          child: Row(children: [
+            Expanded(
+                child: Container(
+                    color: Colors.black,
+                    child: const Center(
+                        child: Text(
+                      "Rain",
+                      style: TextStyle(fontSize: 72, color: Colors.white),
+                    ))))
+          ]));
     }
   }
 
@@ -148,7 +155,7 @@ class _MyAppState extends State<MyApp> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.image), label: "Image"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.widgets), label: "Cube"),
+                    icon: Icon(Icons.water_drop), label: "Rain"),
               ],
               type: BottomNavigationBarType.fixed,
             )));

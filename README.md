@@ -3,12 +3,18 @@
 (en)Japanese ver is [here](https://github.com/MasahideMori-SimpleAppli/sakura_blizzard/blob/main/README_JA.md).  
 (ja)この解説の日本語版は[ここ](https://github.com/MasahideMori-SimpleAppli/sakura_blizzard/blob/main/README_JA.md)にあります。
 
+## Demo
+You can also check the screen similar to the screen that appears when you run the sample code from the sample app below.
+The sample app uses both a front layer and a back layer, with a child widget, the TextWidget, in between.
+[Web Sample](https://sakurablizzard.web.app/)
+
 ## Overview
-This is a 3D effect related to cherry blossom flower petals in Flutter. 
+This is a 3D effect related to cherry blossom flower petals in Flutter.
+In addition to cherry blossoms, you can also make snow, rain, images, etc. fall.
 This package is created using [simple_3d_renderer](https://pub.dev/packages/simple_3d_renderer) and its related packages,
 and is also a simple example of how to use simple_3d_renderer.
-By default, animations of cherry blossom petals and cubes are included,
-but by using ElementsFlowView, you can make any [Sp3dObj](https://pub.dev/packages/simple_3d) have a falling animation.
+If you want to use an object other than the default, use ElementsFlowView.
+Any [Sp3dObj](https://pub.dev/packages/simple_3d) can be made into a falling animation.
 
 ![Sakura](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_sakura_sample.png)
 
@@ -16,9 +22,6 @@ but by using ElementsFlowView, you can make any [Sp3dObj](https://pub.dev/packag
 
 ## Usage
 Please check out the Examples tab.
-You can also check the screen similar to the screen that appears when you run the sample code from the sample app below.
-The sample app uses both a front layer and a back layer, with a child widget, the TextWidget, in between.  
-[Web Sample](https://sakurablizzard.web.app/)
 
 ## Support
 If you need paid support for any reason, please contact my company.  

@@ -33,9 +33,9 @@ class UtilImageTileCreator {
   /// Returns 3d simple tile vertices.
   static List<Sp3dV3D> _tileV3d(double w, double h, double zPosition) {
     final double startX = -w / 2;
-    final double startY = -h / 2;
+    final double startY = h / 2;
     final double endX = w / 2;
-    final double endY = h / 2;
+    final double endY = -h / 2;
     return [
       Sp3dV3D(startX, startY, zPosition),
       Sp3dV3D(startX, endY, zPosition),

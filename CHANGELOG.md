@@ -1,3 +1,9 @@
+## 3.1.0
+
+* Fixed a bug where the image was flipped front and back in ImageFallView.
+* Added RainFallView.
+* Added RainDropPhysics.
+
 ## 3.0.1
 
 * Updated example.
