@@ -1,3 +1,7 @@
+## 3.1.1
+
+* Updates associated with base library updates.
+
 ## 3.1.0
 
 * Fixed a bug where the image was flipped front and back in ImageFallView.

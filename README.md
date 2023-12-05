@@ -18,8 +18,6 @@ Any [Sp3dObj](https://pub.dev/packages/simple_3d) can be made into a falling ani
 
 ![Sakura](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_sakura_sample.png)
 
-![Cube](https://raw.githubusercontent.com/MasahideMori-SimpleAppli/simple_3d_images/main/SakuraBlizzard/sakura_blizzard_cube_sample.png)
-
 ## Usage
 Please check out the Examples tab.
 
