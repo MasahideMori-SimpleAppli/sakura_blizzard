@@ -1,3 +1,7 @@
+## 3.1.4
+
+* Implemented additional fixes for version 3.1.3.
+
 ## 3.1.3
 
 * Fixed reported [issue 3](https://github.com/MasahideMori-SimpleAppli/sakura_blizzard/issues/3). This fix adds exception handling when a widget is destroyed while loading an asset.

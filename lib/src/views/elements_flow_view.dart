@@ -123,7 +123,7 @@ class _ElementsFlowViewState extends State<ElementsFlowView> {
     _backWorld = Sp3dWorld(widget.backLayerElements);
     _frontWorld = Sp3dWorld(widget.frontLayerElements);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (_backWorld != null && _frontWorld != null) {
+      if (mounted && _backWorld != null && _frontWorld != null) {
         List<Sp3dObj> backErrObjs = await _backWorld!.initImages();
         List<Sp3dObj> frontErrObjs = await _frontWorld!.initImages();
         if (backErrObjs.isNotEmpty) {
