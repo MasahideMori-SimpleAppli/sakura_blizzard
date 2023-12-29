@@ -80,9 +80,8 @@ class ElementsFlowView extends StatefulWidget {
 class _ElementsFlowViewState extends State<ElementsFlowView> {
   late final Sp3dCamera _camera;
   Sp3dWorld? _backWorld;
-  bool _backWorldLoaded = false;
   Sp3dWorld? _frontWorld;
-  bool _frontWorldLoaded = false;
+  bool _worldLoaded = false;
   final ValueNotifier<int> _vn = ValueNotifier(0);
   late final Sp3dLight _light;
 
@@ -122,16 +121,25 @@ class _ElementsFlowViewState extends State<ElementsFlowView> {
 
   void _loadImage() {
     _backWorld = Sp3dWorld(widget.backLayerElements);
-    _backWorld!.initImages().then((List<Sp3dObj> errorObjs) {
-      setState(() {
-        _backWorldLoaded = true;
-      });
-    });
     _frontWorld = Sp3dWorld(widget.frontLayerElements);
-    _frontWorld!.initImages().then((List<Sp3dObj> errorObjs) {
-      setState(() {
-        _frontWorldLoaded = true;
-      });
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (_backWorld != null && _frontWorld != null) {
+        List<Sp3dObj> backErrObjs = await _backWorld!.initImages();
+        List<Sp3dObj> frontErrObjs = await _frontWorld!.initImages();
+        if (backErrObjs.isNotEmpty) {
+          debugPrint(
+              "ElementsFlowView: Caught Sp3dMaterial error in backLayerElements. The image index is invalid or the image cannot be loaded.");
+        }
+        if (frontErrObjs.isNotEmpty) {
+          debugPrint(
+              "ElementsFlowView: Caught Sp3dMaterial Error in frontLayerElements. The image index is invalid or the image cannot be loaded.");
+        }
+        if (mounted) {
+          setState(() {
+            _worldLoaded = true;
+          });
+        }
+      }
     });
   }
 
@@ -204,7 +212,7 @@ class _ElementsFlowViewState extends State<ElementsFlowView> {
 
   @override
   Widget build(BuildContext context) {
-    if (_backWorldLoaded && _frontWorldLoaded) {
+    if (_worldLoaded && _backWorld != null && _frontWorld != null) {
       return Stack(children: _getStackChildren());
     } else {
       return const Center(child: CircularProgressIndicator());
