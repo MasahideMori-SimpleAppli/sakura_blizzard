@@ -1,3 +1,7 @@
+## 3.1.5
+
+* Updates associated with base library updates.
+
 ## 3.1.4
 
 * Implemented additional fixes for version 3.1.3.
