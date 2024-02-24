@@ -1,3 +1,7 @@
+## 3.2.0
+
+* Updates associated with base library updates.
+
 ## 3.1.5
 
 * Updates associated with base library updates.
