@@ -1,3 +1,7 @@
+## 4.0.0
+
+* Updates associated with base library updates.
+
 ## 3.2.0
 
 * Updates associated with base library updates.
