@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:simple_3d/simple_3d.dart';
 import 'package:util_simple_3d/util_simple_3d.dart';
-import '../../sakura_blizzard.dart';
+import 'package:sakura_blizzard/sakura_blizzard.dart';
 
 ///
 /// (en) This is a view of falling pieces of snow.

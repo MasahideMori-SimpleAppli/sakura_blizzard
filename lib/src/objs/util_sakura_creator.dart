@@ -1,7 +1,6 @@
 import 'package:simple_3d/simple_3d.dart';
 import 'package:util_simple_3d/util_simple_3d.dart';
-
-import '../colors/sakura_blizzard_materials.dart';
+import 'package:sakura_blizzard/src/colors/sakura_blizzard_materials.dart';
 
 ///
 /// (en) A utility for generating cherry blossom petal objects.

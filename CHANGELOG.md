@@ -1,3 +1,8 @@
+## 6.0.3
+
+* Updates associated with base library updates.
+* Minor internal refactoring without API changes.
+
 ## 6.0.2
 
 * Updates associated with base library updates.
