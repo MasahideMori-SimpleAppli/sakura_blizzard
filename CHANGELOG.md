@@ -1,3 +1,7 @@
+## 6.0.4
+
+* Updates associated with base library updates (no significant behavior change).
+
 ## 6.0.3
 
 * Updates associated with base library updates.
