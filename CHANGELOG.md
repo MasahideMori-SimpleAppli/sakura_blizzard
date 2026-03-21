@@ -1,3 +1,7 @@
+## 6.1.1
+
+* Updated Example and README files.
+
 ## 6.1.0
 
 * Added AssetImageFallView: a variant of ImageFallView that loads images from asset paths internally.

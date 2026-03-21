@@ -5,7 +5,7 @@
 
 ## Demo
 You can also check the screen similar to the screen that appears when you run the sample code from the sample app below.
-The sample app uses both a front layer and a back layer, with a child widget, the TextWidget, in between.
+The sample app uses both a front layer and a back layer, with a child widget, the TextWidget, in between.  
 [Web Sample](https://sakurablizzard.web.app/)
 
 ## Overview
@@ -39,6 +39,10 @@ However, versions less than 1.0.0 may change the file structure regardless of th
 ## License
 This software is released under the MIT License, see LICENSE file.
 
-## Copyright notice
-The “Dart” name and “Flutter” name are trademarks of Google LLC.  
-*The developer of this package is not Google LLC.
+## Trademarks
+
+- “Dart” and “Flutter” are trademarks of Google LLC.  
+  *This package is not developed or endorsed by Google LLC.*
+
+- GitHub and the GitHub logo are trademarks of GitHub, Inc.  
+  *This package is not affiliated with GitHub, Inc.*

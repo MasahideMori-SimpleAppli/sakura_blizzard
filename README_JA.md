@@ -2,7 +2,7 @@
 
 ## デモ
 サンプルコードを実行した時に表示される画面と類似の画面を、以下のサンプルアプリからも確認することができます。
-サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。
+サンプルアプリではフロントレイヤとバックレイヤの両方を使用しており、子ウィジェットであるテキストウィジェットがその中間にあります。  
 [サンプルアプリ](https://sakurablizzard.web.app/)
 
 ## 概要
@@ -35,6 +35,10 @@ Exampleタブをチェックしてください。
 ## ライセンス
 このソフトウェアはMITライセンスの元配布されます。LICENSEファイルの内容をご覧ください。
 
-## 著作権表示
-The “Dart” name and “Flutter” name are trademarks of Google LLC.  
-*The developer of this package is not Google LLC.
+## Trademarks
+
+- “Dart” and “Flutter” are trademarks of Google LLC.  
+  *This package is not developed or endorsed by Google LLC.*
+
+- GitHub and the GitHub logo are trademarks of GitHub, Inc.  
+  *This package is not affiliated with GitHub, Inc.*
