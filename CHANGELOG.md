@@ -1,3 +1,15 @@
+## 6.1.0
+
+* Added AssetImageFallView: a variant of ImageFallView that loads images from asset paths internally.
+* Added CustomImageFallView: a variant of ImageFallView with factory functions for physics, size, position, and image index.
+* Added CustomFallView: a general-purpose falling view that accepts any Sp3dObj via a factory function.
+* Added PopPhysics: objects bursting outward in all directions.
+* Added DirectionalPopPhysics: objects bursting in a specified direction.
+* Added ConfettiHirahiraPhysics: objects bursting in all directions, then transitioning smoothly to hirahira falling.
+* Added DirectionalConfettiHirahiraPhysics: objects bursting in a specified direction, then transitioning smoothly to hirahira falling.
+* Added showIndicatorOnLoading and enablePositionReset parameters to ElementsFlowView, which are also propagated to all view widgets.
+* Partially addressed [issue 2](https://github.com/MasahideMori-SimpleAppli/sakura_blizzard/issues/2): asset loading is now handled internally via AssetImageFallView.
+
 ## 6.0.5
 
 * Adjustments following updates in the base library (no significant behavior changes).

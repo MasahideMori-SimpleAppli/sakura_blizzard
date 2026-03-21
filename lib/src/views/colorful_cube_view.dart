@@ -10,8 +10,6 @@ import 'package:sakura_blizzard/sakura_blizzard.dart';
 ///
 /// (ja) カラフルなキューブが回転しながら落下するビューです。
 ///
-/// Author Masahide Mori
-///
 class ColorfulCubeView extends StatefulWidget {
   final Widget child;
   final Size viewSize;
@@ -24,6 +22,8 @@ class ColorfulCubeView extends StatefulWidget {
   final double minBrightness;
   final int fps;
   final Sp3dPhysics Function()? customPhysicsCreation;
+  final bool showIndicatorOnLoading;
+  final bool enablePositionReset;
 
   /// * [child] : A child view will placed between the front and back layers.
   /// * [viewSize] : This view size.
@@ -44,6 +44,10 @@ class ColorfulCubeView extends StatefulWidget {
   /// and 1 means the brightness will not change.
   /// * [customPhysicsCreation] : You can create your own behavior and use it.
   /// If this is not null, the dropType parameter is ignored.
+  /// * [showIndicatorOnLoading] : If true, an indicator will be displayed
+  /// while loading. If false, the child will be displayed.
+  /// * [enablePositionReset] : Specifies whether the object's position is
+  /// reset after it falls. Set to false for one-time effects.
   const ColorfulCubeView(
       {required this.child,
       required this.viewSize,
@@ -56,6 +60,8 @@ class ColorfulCubeView extends StatefulWidget {
       this.fps = 60,
       this.minBrightness = 0.0,
       this.customPhysicsCreation,
+      this.showIndicatorOnLoading = true,
+      this.enablePositionReset = true,
       super.key});
 
   @override
@@ -141,6 +147,8 @@ class _ColorfulCubeViewState extends State<ColorfulCubeView> {
         minBrightness: widget.minBrightness,
         fps: widget.fps,
         key: UniqueKey(),
+        showIndicatorOnLoading: widget.showIndicatorOnLoading,
+        enablePositionReset: widget.enablePositionReset,
         child: widget.child,
       );
     });

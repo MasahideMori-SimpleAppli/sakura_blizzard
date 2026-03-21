@@ -12,8 +12,6 @@ import 'package:simple_3d_renderer/simple_3d_renderer.dart';
 /// (ja) 3Dエフェクト作成用の汎用のビューです。
 /// このウィジェットは子ウィジェットとして使用されることを想定しています。
 ///
-/// Author Masahide Mori
-///
 class ElementsFlowView extends StatefulWidget {
   final Widget child;
   final Size viewSize;
@@ -22,6 +20,8 @@ class ElementsFlowView extends StatefulWidget {
   final int fps;
   final double minBrightness;
   final bool resetRandomX;
+  final bool showIndicatorOnLoading;
+  final bool enablePositionReset;
 
   /// * [child] : A child view will placed between the front and back layers.
   /// * [viewSize] : This view size.
@@ -33,6 +33,10 @@ class ElementsFlowView extends StatefulWidget {
   /// and 1 means the brightness will not change.
   /// * [resetRandomX] : Specifies whether to change the x coordinate
   /// when the object falls to the bottom and then falls again from the top.
+  /// * [showIndicatorOnLoading] : If true, an indicator will be displayed
+  /// while loading. If false, the child will be displayed.
+  /// * [enablePositionReset] : Specifies whether the object's position is
+  /// reset after it falls. Set to false for one-time effects.
   const ElementsFlowView(
       {required this.child,
       required this.viewSize,
@@ -41,6 +45,8 @@ class ElementsFlowView extends StatefulWidget {
       this.fps = 60,
       this.minBrightness = 0.80,
       this.resetRandomX = true,
+      this.showIndicatorOnLoading = true,
+      this.enablePositionReset = true,
       super.key});
 
   @override
@@ -58,13 +64,15 @@ class ElementsFlowView extends StatefulWidget {
       obj.move(obj.physics!.velocity!);
       // reset position
       if (obj.getCenter().y < -1 * (viewSize.height / 8)) {
-        if (resetRandomX) {
-          final Sp3dV3D diff = Sp3dV3D(0, 0, 0) - obj.getCenter();
-          obj.move(diff);
-          obj.move(Sp3dV3D(viewSize.width * Random().nextDouble(),
-              viewSize.height * 1.125, 0));
-        } else {
-          obj.move(Sp3dV3D(0, viewSize.height * 1.125, 0));
+        if (enablePositionReset) {
+          if (resetRandomX) {
+            final Sp3dV3D diff = Sp3dV3D(0, 0, 0) - obj.getCenter();
+            obj.move(diff);
+            obj.move(Sp3dV3D(viewSize.width * Random().nextDouble(),
+                viewSize.height * 1.125, 0));
+          } else {
+            obj.move(Sp3dV3D(0, viewSize.height * 1.125, 0));
+          }
         }
       }
       // object rotation
@@ -215,7 +223,11 @@ class _ElementsFlowViewState extends State<ElementsFlowView> {
     if (_worldLoaded && _backWorld != null && _frontWorld != null) {
       return Stack(children: _getStackChildren());
     } else {
-      return const Center(child: CircularProgressIndicator());
+      if (widget.showIndicatorOnLoading) {
+        return const Center(child: CircularProgressIndicator());
+      } else {
+        return Stack(children: [widget.child]);
+      }
     }
   }
 }
