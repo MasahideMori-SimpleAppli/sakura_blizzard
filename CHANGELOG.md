@@ -1,3 +1,7 @@
+## 6.1.3
+
+* Updated `simple_3d_renderer` dependency to ^24.0.0.
+
 ## 6.1.2
 
 * Updated `simple_3d_renderer` dependency to ^23.0.3 to resolve internal issues.
